@@ -11,5 +11,8 @@
     "store"
   ],
   "author": "Jose Cortes",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-contrib-uglify": "^2.0.0"
+  }
 }
