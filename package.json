@@ -1,0 +1,15 @@
+{
+  "name": "comicstore",
+  "version": "1.0.0",
+  "description": "Store site when you can see all the comics information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "comic",
+    "store"
+  ],
+  "author": "Jose Cortes",
+  "license": "ISC"
+}
