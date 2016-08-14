@@ -13,30 +13,27 @@
 </head>
 
 <body>
-    <ul> 
-        <li><a href="listaComics.html">Comics</a></li>
-        <li><a href="">Ingresar Comic</a></li>
+    <ul>
+        <li><a href="listaComics.html">Lista Comics</a></li>
+        <li><a href="registroEmpleado.html">Registrar Empleado</a></li>
+        <li><a href="">Salir</a></li>
         <li style="float:right"><a class="active" href="#about">BRAND</a></li>
     </ul>
     <form>
         <fieldset>
             <legend>
-                <h1>Registro Empleados</h1>
+                <h1>Registro Comics</h1>
             </legend>
-            Nombres:<br>
-            <input id="nameEmp" type="text" required>
-            <br> Apellidos:<br>
-            <input id="lastEmp" type="text" required>
-            <br> Documento de identidad:<br>
-            <input id="idNumber" type="number" required>
-            <br> Corre Electronico:<br>
-            <input id="mail" type="text" required>
-            <br> Contraseña:<br>
-            <input id="pass" type="password" required>
-            <br> Confirme Contraseña:<br>
-            <input id="passConfirm" type="password">
+            <br> Titulo:<br>
+            <input id="title" type="text" required>
+            <br> Genero:<br>
+            <input id="genere" type="text" required>
+            <br> Autor:<br>
+            <input id="author" type="text" required>
+            <br> Descripcion:<br>
+            <input id="description" type="text" required>
             <br>
-            <input type="submit" id="submitRegister">
+            <button id="submitComic">Registrar Comic</button>
             <!--  <center><button id="submitRegister">
                 REGISTRAR</button></center>-->
 
@@ -45,9 +42,9 @@
 
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="js/registerEmployee.js"></script>
+    <script src="js/registerComic.js"></script>
     <script src="js/main.js"></script>
-    <script>RegisterEmployee.verifyUser()</script>
+    <script>RegisterComic.verifyUser()</script>
 </body>
 
 </html>

@@ -37,7 +37,7 @@ var ComicList = (function () {
 
 
   var showComicList = function (comic, comicList) {
-    var title = '<button id=' + comic.title + '>' + comic.title + '</button>';
+    var title = '<button class="comicButton" id=' + comic.title + '>' + comic.title + '</button>';
     $('.panel-list').append(title);
     showDetails(comic.title, comicList);
   };
