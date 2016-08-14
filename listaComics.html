@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Comic Store</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+
+<body>
+    <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#news">Ingresar Comics</a></li>
+        <li><a href="registroEmpleado.html">Ingresar Empleados</a></li>
+        <li style="float:right"><a class="active" href="#about">About</a></li>
+    </ul>
+    <div>
+    </div>
+    <div class="panel-list"></div>
+    <div id="detailComic" style="">
+        <h1 id="titleComic">hola</h1>
+        <div id="descriptionComic"></div>
+        <div id="commentsComic"></div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="js/ComicList.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/LogIn.js"></script>
+
+</body>
+<script>
+    ComicList.verifyUser();
+    
+</script>
+
+</html>

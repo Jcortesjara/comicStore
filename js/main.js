@@ -1,4 +1,4 @@
 $(document).ready(function () {
-    ComicList.init()
+    //ComicList.init()
     console.log("ready!");
 });

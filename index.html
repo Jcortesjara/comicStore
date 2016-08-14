@@ -1,19 +1,29 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
     <title>Comic Store</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/divs.css">
 </head>
 
 <body>
-    <div class="panel-list">
-        <h1>Lista de comics</h1>
-    </div>
-    <div class="detailComic">
+    <div>
+
+        <label><b>Usuario</b></label><br>
+        <input id="userName" type="text" placeholder="Ingrese su nombre de usuario"><br>
+
+        <label><b>Contraseña</b></label><br>
+        <input id="pass" type="password" placeholder="Porfavor ingrese su contraseña"><br>
+        <button id="submitLog">INGRESAR</button><br>
 
     </div>
+    </div>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="js/ComicList.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/LogIn.js"></script>
+    <script>
+        LogIn.initButton();
+    </script>
 
 </body>
 

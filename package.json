@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "grunt-contrib-uglify": "^2.0.0"
+  },
+  "dependencies": {
+    "complexity": "0.0.5"
   }
 }
