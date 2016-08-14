@@ -48,14 +48,35 @@ var ComicList = (function () {
   //Obtiene la lista de comics que le peticion _requestComics realizo
   var getComics = function (data) {
     $('.panel-list').html("");
-    var comicList = data.comicList;
-    comicListGlobal = comicList;
-    for (var index = 0; index < comicList.length; index++) {
-      showComicList(comicList[index], comicList);
-      comicArray.push(comicList[index].title.toUpperCase());
+    //var comicList = data.comicList;
+    comicListGlobal = data.comicList;
+    for (var index = 0; index < 6; index++) {
+      showComicList(comicListGlobal[index], comicListGlobal);
+      comicArray.push(comicListGlobal[index].title.toUpperCase());
+    }
+    if (comicListGlobal.length > 6) {
+      $('.panel-list').append('<button id="viewMore">Ver mas..</button>');
+      ComicList.viewMore()
 
     }
   };
+
+  var viewMore = function () {
+    var sextas = 1;
+    var lastPosition = 6;
+    $('#viewMore').click(function () {
+      console.log('adentro')
+      for (var index = lastPosition; index < lastPosition + 3; index++) {
+        showComicList(comicListGlobal[index], comicListGlobal);
+        comicArray.push(comicListGlobal[index].title.toUpperCase());
+      }
+      lastPosition = lastPosition + 3;
+      if (comicListGlobal.length < lastPosition) {
+        $('#viewMore').hide()
+      }
+    });
+
+  }
 
 
   var showComicList = function (comic, comicList) {
@@ -67,7 +88,7 @@ var ComicList = (function () {
   var showDetails = function (idButton, comicList) {
     var button = document.getElementById(idButton)
     $(button).click(function () {
-       $('#commentsComic').html("");
+      $('#commentsComic').html("");
       for (var index = 0; index < comicList.length; index++) {
         if (idButton === comicList[index].title.toLowerCase()) {
           $('#titleComic').html(comicList[index].title)
@@ -90,6 +111,7 @@ var ComicList = (function () {
   }
   //register
   return {
+    viewMore: viewMore,
     verifyUser: verifyUser,
     init: init,
     searchBar: searchBar,
