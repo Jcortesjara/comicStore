@@ -16,9 +16,21 @@
     </ul>
     <div>
     </div>
+    <div>
+        <fieldset>
+            <legend>
+                Buscador:
+            </legend>
+            <input onkeydown="ComicList.searchBar()" id="buscador" onclick="this.select()" type="text" placeholder="Ingresa el comic que quieres buscar">
+        </fieldset>
+
+
+    </div>
     <div class="panel-list"></div>
     <div id="detailComic">
-        <center><h1 id="titleComic"></h1></center>
+        <center>
+            <h1 id="titleComic"></h1>
+        </center>
         <p id="descriptionComic"></p>
         <p id="commentsComic"></p>
     </div>

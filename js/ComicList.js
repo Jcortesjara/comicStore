@@ -1,4 +1,5 @@
 var ComicList = (function () {
+  var comicArray = [];
 
 
   // funcion que inicia la peticion
@@ -6,6 +7,16 @@ var ComicList = (function () {
     _requestComics()
   };
 
+  var searchBar = function () {
+    var comic = $('#buscador').val();
+    comic.toUpperCase();
+    if (comic.length > 3) {
+      for (var index = 0; index < comicArray.length; index++) {
+        var comicExpression = new RegExp(comicArray[index])
+        var result = comic.match(comicExpression)
+      }
+    }
+  }
 
   // realiza la peticion get al backend que espera reicibir un objeto json con la lista de comics
   var _requestComics = function () {
@@ -32,6 +43,7 @@ var ComicList = (function () {
     var comicList = data.comicList;
     for (var index = 0; index < comicList.length; index++) {
       showComicList(comicList[index], comicList);
+      comicArray.push(comicList[index].title.toUpperCase());
     }
   };
 
@@ -45,7 +57,7 @@ var ComicList = (function () {
   var showDetails = function (idButton, comicList) {
     var button = document.getElementById(idButton)
     $(button).click(function () {
-      $('#detailComic').show(1000);
+      $('#detailComic').show(1500);
       for (var index = 0; index < comicList.length; index++) {
         if (idButton === comicList[index].title) {
           $('#titleComic').html(comicList[index].title)
@@ -65,8 +77,9 @@ var ComicList = (function () {
   }
   //register
   return {
-    init: init,
     verifyUser: verifyUser,
+    init: init,
+    searchBar: searchBar,
     showDetails: showDetails
 
     //getComics: getComics
