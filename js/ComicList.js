@@ -94,8 +94,6 @@ var ComicList = (function () {
     init: init,
     searchBar: searchBar,
     showDetails: showDetails
-
-    //getComics: getComics
   };
 
 })();
