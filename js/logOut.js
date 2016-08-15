@@ -4,7 +4,7 @@
  * Log In 
  */
 
-
+//Limpiar la localStorage para hacer el cierre de sesion
 var logOut = function () {
     localStorage.clear();
 }

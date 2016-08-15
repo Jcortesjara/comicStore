@@ -7,6 +7,7 @@
 
 var LogIn = (function () {
 
+    //capturar la informacion  del usuario
     var getUserInfo = function () {
         var userName = $('#userName').val();
         var pass = $('#pass').val();
@@ -20,6 +21,7 @@ var LogIn = (function () {
         }
     }
 
+    //inicializar el boton de inicio
     var initButton = function () {
         $('#submitLog').click(function () {
             getUserInfo();

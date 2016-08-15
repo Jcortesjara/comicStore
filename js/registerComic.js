@@ -8,6 +8,7 @@
 
 var RegisterComic = (function () {
 
+    // capturar los datos del comic 
     var getComicData = function () {
         var title = $('#title').val()
         var genere = $('#genere').val()
@@ -21,12 +22,12 @@ var RegisterComic = (function () {
             "description": description
         });
 
-        console.log(jsonOut);
+        console.log('Json enviado al back: ' + jsonOut);
         return jsonOut;
     }
 
 
-
+    //metodo post que envia el comic registrado al back
     var sendData = function () {
         $.ajax({
             url: '0.0.0.0',
@@ -34,7 +35,7 @@ var RegisterComic = (function () {
             data: getComicData,
             contentType: 'application/json',
             success: function (response) {
-                //mostrar resultado
+
                 alert('Comic Ingresado');
             }
         });
@@ -44,13 +45,14 @@ var RegisterComic = (function () {
 
 
 
-
+    //inicializar el boton de envio
     var initButton = function () {
         $('#submitComic').click(function () {
             sendData();
         })
     }
 
+    //Verificar que el usuario este registrado
     var verifyUser = function () {
         if (localStorage.getItem('userNameStorage') === 'admin' && localStorage.getItem('passStorage') === 'admin') {
             initButton();

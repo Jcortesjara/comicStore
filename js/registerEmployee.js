@@ -1,13 +1,13 @@
 /**
  * @author Jose Cortes <josecortesjaramillo@gmail.com>
  *
- * Employee register
+ * Funciones que permiten el registro de un nuevo empleado
  */
 
 
 
 var RegisterEmployee = (function () {
-
+    //Capturar la informacion del nuevo empleado
     var getEmployeeData = function () {
         var name = $('#nameEmp').val()
         var lastName = $('#lastEmp').val()
@@ -23,6 +23,7 @@ var RegisterEmployee = (function () {
 
     }
 
+    //validar el correo ingresado
     var validateInfo = function (mail) {
         var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
         if (testEmail.test(mail)) {
@@ -32,6 +33,7 @@ var RegisterEmployee = (function () {
         }
     };
 
+    //Validar el nivel de seguridad de la contraseña ingresada
     var checkPwd = function () {
         var passStrong = true;
         var str = $('#pass').val();
@@ -55,20 +57,16 @@ var RegisterEmployee = (function () {
         }
     }
 
-    /*   var jsonOut = JSON.stringify({
-           "name": name,
-           "lastName": lastName,
-           "idNumber": idNumber,
-           "userName": userName
-       })*/
 
 
+    //inicializar el boton del registro del empleado
     var initButton = function () {
         $('#submitRegister').click(function () {
             getEmployeeData();
         })
     }
 
+    //verificar que el usuario este registrado en el sistema
     var verifyUser = function () {
         if (localStorage.getItem('userNameStorage') === 'admin' && localStorage.getItem('passStorage') === 'admin') {
             initButton();

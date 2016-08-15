@@ -1,13 +1,21 @@
+/**
+ * @author Jose Cortes <josecortesjaramillo@gmail.com>
+ *
+ * funciones vista de comics 
+ */
+
 var ComicList = (function () {
   var comicArray = [];
   var comicListGlobal;
 
 
-  // funcion que inicia la peticion
+  // funcion que inicia la peticion al back para solicitar la informacion
   var init = function () {
     _requestComics()
   };
 
+
+  //funcion de busqueda de comics
   var searchBar = function () {
     var comic = $('#buscador').val().toUpperCase();
     if (comic.length > 3) {
@@ -45,7 +53,7 @@ var ComicList = (function () {
   };
 
 
-  //Obtiene la lista de comics que le peticion _requestComics realizo
+  //Obtiene la lista de comics y ejecuta las funciones necesarias
   var getComics = function (data) {
     $('.panel-list').html("");
     //var comicList = data.comicList;
@@ -56,11 +64,12 @@ var ComicList = (function () {
     }
     if (comicListGlobal.length > 9) {
       $('#verMas').html('<button id="viewMore">Ver mas..</button>');
-      ComicList.viewMore()
-
+      ComicList.viewMore();
     }
   };
 
+
+  //funcion que permite mostrar 9 comics y añadir el boton "Ver mas..."
   var viewMore = function () {
     var sextas = 1;
     var lastPosition = 9;
@@ -77,13 +86,14 @@ var ComicList = (function () {
 
   }
 
-
+  //Agregar la lista de comics al DOM
   var showComicList = function (comic, comicList) {
     var title = '<button class="comicButton" id=' + comic.title.toLowerCase() + '>' + comic.title + '</button>';
     $('.panel-list').append(title);
     showDetails(comic.title.toLowerCase(), comicList);
   };
 
+  //funcion que permite mostrar los detalles del comic luego de hacer click
   var showDetails = function (idButton, comicList) {
     var button = document.getElementById(idButton)
     $(button).click(function () {
@@ -106,21 +116,11 @@ var ComicList = (function () {
         }
       }
       $('#detailComic').show(1500);
-
-
-
     });
   }
 
-  var editComic = function () {
-    $('#editComic').click(function () {
-      $('#descriptionComic').replaceWith()
-    })
 
-  }
-
-
-
+  // funcion que verifica que el usuario este registrado en el sistema
   var verifyUser = function () {
     if (localStorage.getItem('userNameStorage') === 'admin' && localStorage.getItem('passStorage') === 'admin') {
       init();
@@ -128,7 +128,7 @@ var ComicList = (function () {
       window.open('index.html', '_self');
     }
   }
-  //register
+
   return {
     viewMore: viewMore,
     verifyUser: verifyUser,
