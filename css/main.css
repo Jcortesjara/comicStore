@@ -30,11 +30,10 @@ li a:hover:not(.active) {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-/*.comicButton{
-    border-radius: 2em;
-    padding: 12em 2em;
-    margin: 2em;
-}*/
+#editView{
+  
+
+}
 
 .comicButton {
   background: #ff8201;

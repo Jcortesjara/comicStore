@@ -18,7 +18,7 @@ var RegisterEmployee = (function () {
         if (pass === passConfirm) {
             validateInfo(mail);
         } else {
-            console.log('Las contaseñas no coinciden')
+            alert('Las contaseñas no coinciden')
         }
 
     }
@@ -29,7 +29,7 @@ var RegisterEmployee = (function () {
         if (testEmail.test(mail)) {
             checkPwd();
         } else {
-            console.log('correo no valido!');
+            alert('correo no valido!');
         }
     };
 
@@ -39,21 +39,21 @@ var RegisterEmployee = (function () {
         var str = $('#pass').val();
         if (str.length < 8) {
             passStrong = false;
-            console.log("la contraseña debe contenert almenos 8 caracteres");
+            alert("la contraseña debe contenert almenos 8 caracteres");
         } else if (str.length > 20) {
             passStrong = false;
-            console.log("la contraseña debe contenert maximo 20 caracteres");
+            alert("la contraseña debe contenert maximo 20 caracteres");
         } else if (str.search(/[a-zA-Z]/) === -1) {
             passStrong = false;
-            console.log("La contraseña debe contener almenos una mayuscula");
+            alert("La contraseña debe contener almenos una mayuscula");
         } else if (str.search(/[`!%$&^*()]+/) === -1) {
             passStrong = false;
-            console.log("La contraseña debe contener almenos un caracter especial");
+            alert("La contraseña debe contener almenos un caracter especial");
         } else if (str.match(/\d+/g)[0].length < 2) {
             passStrong = false;
-            console.log('La contraseña debe contener almenos dos numeros');
+            alert('La contraseña debe contener almenos dos numeros');
         } else if (passStrong = true) {
-            console.log('registro existoso');
+            alert('registro existoso');
         }
     }
 

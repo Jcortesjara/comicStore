@@ -5,10 +5,11 @@
     <title>Comic Store</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/rules.css">
 </head>
 
 <body>
-    <ul>
+    <ul class="topBar">
         <li><a href="registroComics.html">Ingresar Comics</a></li>
         <li><a href="registroEmpleado.html">Ingresar Empleados</a></li>
         <li><a onclick="logOut()" href="index.html">Salir</a></li>
@@ -17,7 +18,7 @@
     <div>
     </div>
     <div>
-        <fieldset>
+        <fieldset style="font-size: 3em;">
             <legend>
                 Buscador:
             </legend>
@@ -27,8 +28,10 @@
 
     </div>
     <div class="panel-list"></div>
-    <div id="verMas"></div>
-    <fieldset id="detailComic" style="display: none">
+    <center>
+        <div id="verMas"></div>
+    </center>
+    <fieldset id="detailComic" style="font-size:2em;" style="display: none">
         <legend>
             <h1 id="titleComic"></h1>
         </legend>
@@ -41,11 +44,11 @@
     </fieldset>
     <fieldset id="editView" style="display: none">
         <legend>
-            <input type="text" id="titleEdit">
+            <input style="font-size: 17px;" type="text" id="titleEdit">
         </legend>
         <br>
-        <input type="text" id="descriptionEdit">
-        <br>
+        <textarea style="font-size: 17px;" cols="100" rows="15" type="text" id="descriptionEdit"></textarea>
+
         <center><button>Enviar</button></center>
     </fieldset>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>

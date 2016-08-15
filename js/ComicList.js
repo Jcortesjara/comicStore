@@ -63,7 +63,7 @@ var ComicList = (function () {
       comicArray.push(comicListGlobal[index].title.toUpperCase());
     }
     if (comicListGlobal.length > 9) {
-      $('#verMas').html('<button id="viewMore">Ver mas..</button>');
+      $('#verMas').html('<button class="comicButton"  style="font-size: 2em;" id="viewMore">Ver mas..</button>');
       ComicList.viewMore();
     }
   };

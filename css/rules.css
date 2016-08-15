@@ -1,0 +1,79 @@
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+/* Styles */
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
+
+
+ input{
+        font-size: 3em !important;
+    }
+
+ .comicButton{
+        font-size: 61px !important;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+
+    #buscador{
+        font-size: 50px !important;
+    }
+
+    .topBar{
+        font-size: 33px !important;
+    }
+    
+    .registroForm{
+        font-size: 2em;
+
+    }
+
+   
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+#buscador{
+        font-size: 50px !important;
+    }
+
+     .comicButton{
+        font-size: 50px !important;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    .topBar{
+        font-size: 33px !important;
+    }
+
+}
+
+
+
+
+
+
+
+/*@media only screen and (min-width: 768px) {
+   
+
+.comicButton{
+        font-size: 60px !important;
+        background-color:red !important; 
+       
+    }
+
+    .buscador{
+        font-size: 50px !important;
+    }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+   
+    
+}*/
