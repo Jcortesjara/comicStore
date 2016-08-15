@@ -27,6 +27,7 @@
 
     </div>
     <div class="panel-list"></div>
+    <div id="verMas"></div>
     <fieldset id="detailComic" style="display: none">
         <legend>
             <h1 id="titleComic"></h1>
@@ -36,6 +37,16 @@
             <h1>Comentarios</h1>
         </center>
         <div id="commentsComic"></div>
+        <center><button id="editComic">Editar</button></center>
+    </fieldset>
+    <fieldset id="editView" style="display: none">
+        <legend>
+            <input type="text" id="titleEdit">
+        </legend>
+        <br>
+        <input type="text" id="descriptionEdit">
+        <br>
+        <center><button>Enviar</button></center>
     </fieldset>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="js/ComicList.js"></script>

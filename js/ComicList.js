@@ -50,12 +50,12 @@ var ComicList = (function () {
     $('.panel-list').html("");
     //var comicList = data.comicList;
     comicListGlobal = data.comicList;
-    for (var index = 0; index < 6; index++) {
+    for (var index = 0; index < 9; index++) {
       showComicList(comicListGlobal[index], comicListGlobal);
       comicArray.push(comicListGlobal[index].title.toUpperCase());
     }
-    if (comicListGlobal.length > 6) {
-      $('.panel-list').append('<button id="viewMore">Ver mas..</button>');
+    if (comicListGlobal.length > 9) {
+      $('#verMas').html('<button id="viewMore">Ver mas..</button>');
       ComicList.viewMore()
 
     }
@@ -63,17 +63,16 @@ var ComicList = (function () {
 
   var viewMore = function () {
     var sextas = 1;
-    var lastPosition = 6;
+    var lastPosition = 9;
     $('#viewMore').click(function () {
-      console.log('adentro')
-      for (var index = lastPosition; index < lastPosition + 3; index++) {
+      for (var index = lastPosition; index < lastPosition + 6; index++) {
         showComicList(comicListGlobal[index], comicListGlobal);
         comicArray.push(comicListGlobal[index].title.toUpperCase());
+        if (comicListGlobal.length <= lastPosition + 6) {
+          $('#viewMore').hide()
+        }
       }
-      lastPosition = lastPosition + 3;
-      if (comicListGlobal.length < lastPosition) {
-        $('#viewMore').hide()
-      }
+      lastPosition = lastPosition + 6;
     });
 
   }
@@ -88,19 +87,39 @@ var ComicList = (function () {
   var showDetails = function (idButton, comicList) {
     var button = document.getElementById(idButton)
     $(button).click(function () {
+      $('#editView').hide();
       $('#commentsComic').html("");
       for (var index = 0; index < comicList.length; index++) {
         if (idButton === comicList[index].title.toLowerCase()) {
           $('#titleComic').html(comicList[index].title)
           $('#descriptionComic').html(comicList[index].description)
+          $('#titleEdit').val(comicList[index].title);
+          $('#descriptionEdit').val(comicList[index].description);
+          $('#editComic').click(function () {
+            $('#detailComic').hide();
+            $('#editView').show(1500);
+          })
           for (var i = 0; i < comicList[index].comments.length; i++) {
             $('#commentsComic').append('<p>' + comicList[index].comments[i] + '</p>')
           }
+
         }
       }
       $('#detailComic').show(1500);
+
+
+
     });
   }
+
+  var editComic = function () {
+    $('#editComic').click(function () {
+      $('#descriptionComic').replaceWith()
+    })
+
+  }
+
+
 
   var verifyUser = function () {
     if (localStorage.getItem('userNameStorage') === 'admin' && localStorage.getItem('passStorage') === 'admin') {
