@@ -44,7 +44,9 @@ var ComicList = (function () {
     });
     promise.done(
       function (response) {
-        getComics(JSON.parse(response));
+        var jsonData = (typeof (response) === "string") ?
+          JSON.parse(response) : response;
+        getComics(jsonData);
       });
     promise.fail(
       function (error) {
