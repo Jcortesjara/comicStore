@@ -32,14 +32,14 @@
 .lgn_left, .lgn_right { height: 100%; }
 
 .lgn_left {
-	width: 200px;
+	width: 30%;
 	border-right:1px #525d65 solid;
 	float:left;
 	
 }
 
 .lgn_right {
-	width: 300px;
+	width: 60%;
 	float:right;
 	text-align:center;
 }

@@ -10,7 +10,12 @@
 
 
  input{
-        font-size: 3em !important;
+        font-size: 2em !important;
+    }
+
+    .login{
+        width: 57em;
+        height: 54em;
     }
    
 
@@ -37,7 +42,7 @@
 }
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+@media only screen and (min-device-width : 760px) and (max-device-width : 1024px) {
 /* Styles */
 #buscador{
         font-size: 50px !important;
@@ -50,6 +55,11 @@
 
     .topBar{
         font-size: 33px !important;
+    }
+
+    .login{
+        width: 57em !important;
+        height: 54em !important;
     }
 
 }

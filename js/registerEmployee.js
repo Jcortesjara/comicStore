@@ -5,6 +5,7 @@
  */
 
 
+var jsonOut;
 
 var RegisterEmployee = (function () {
     //Capturar la informacion del nuevo empleado
@@ -15,6 +16,14 @@ var RegisterEmployee = (function () {
         var mail = $('#mail').val()
         var pass = $('#pass').val()
         var passConfirm = $('#passConfirm').val()
+        jsonOut = JSON.stringify({
+            "name": name,
+            "lastName": lastName,
+            "idNumber": idNumber,
+            "mail": mail,
+            "pass": pass,
+
+        })
         if (pass === passConfirm) {
             validateInfo(mail);
         } else {
@@ -32,6 +41,19 @@ var RegisterEmployee = (function () {
             alert('correo no valido!');
         }
     };
+
+        //metodo post que envia el empleado registrado al back
+    var sendData = function (jsonData) {
+        $.ajax({
+            url: '0.0.0.0',
+            type: "POST",
+            data: jsonData,
+            contentType: 'application/json',
+            success: function (response) {
+                alert('Comic Ingresado');
+            }
+        });
+    }
 
     //Validar el nivel de seguridad de la contraseña ingresada
     var checkPwd = function () {
@@ -53,6 +75,7 @@ var RegisterEmployee = (function () {
             passStrong = false;
             alert('La contraseña debe contener almenos dos numeros');
         } else if (passStrong = true) {
+            sendData(jsonOut);
             alert('registro existoso');
         }
     }
