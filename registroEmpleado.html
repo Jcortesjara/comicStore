@@ -8,9 +8,9 @@
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
     <title>Comic Store</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/forms.css">
-    <link rel="stylesheet" href="css/rules.css">
+    <link rel="stylesheet" href="dist/css/main.min.css">
+    <link rel="stylesheet" href="dist/css/forms.min.css">
+    <link rel="stylesheet" href="dist/css/rules.min.css">
 </head>
 
 <body>
@@ -38,15 +38,13 @@
             <br> Confirme Contraseña:<br>
             <input id="passConfirm" type="password">
             <br>
-               <button type="submit" style="font-size: 1.5em;" id="submitRegister">Registrar Empleado</button>
+            <button type="submit" style="font-size: 1.5em;" id="submitRegister">Registrar Empleado</button>
         </fieldset>
     </form>
 
 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="js/registerEmployee.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/logOut.js"></script>
+    <script src="dist/js/comic.min.js"></script>
+    <script src="dist/js/libs.min.js"></script>
 
     <script>RegisterEmployee.verifyUser()</script>
 </body>

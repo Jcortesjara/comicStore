@@ -116,6 +116,7 @@ var ComicList = (function () {
         }
       }
       $('#detailComic').show(1500);
+      sendEdit();
     });
   }
 
@@ -127,6 +128,24 @@ var ComicList = (function () {
     } else {
       window.open('index.html', '_self');
     }
+  }
+
+  //funcion que envia al back el comic editado
+  var sendEdit = function () {
+    $('#sendComic').click(function () {
+      $.ajax({
+        url: '0.0.0.0',
+        type: "POST",
+        data: $('#descriptionEdit').val() + $('#titleEdit').val(),
+        contentType: 'application/json',
+        success: function (response) {
+
+          alert('Comic Ingresado');
+        }
+      });
+    })
+
+
   }
 
   return {
